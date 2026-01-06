@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  web:
+    container_name: snakecoder-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    volumes:
+      - ./index.php:/var/www/html/index.php:ro
+
+
